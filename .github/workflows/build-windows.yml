@@ -59,7 +59,7 @@ jobs:
           path: build/bin/apichecker.exe
 
   create-release:
-    needs: [build-windows, build-linux, build-macos]
+    needs: [build-windows]
     runs-on: ubuntu-latest
     if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.version)
     
